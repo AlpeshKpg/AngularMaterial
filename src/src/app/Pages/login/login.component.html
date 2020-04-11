@@ -1,0 +1,25 @@
+<mat-card>
+    <form [formGroup]="frmLogin" (ngSubmit)="login()" class="FrmForm">
+        <mat-form-field class="full-width">
+            <mat-label>Username or Email</mat-label>
+            <input type="text" [ngClass]="getErrorCSS('Username')" matInput
+                placeholder="Username or Email" formControlName="Username" />
+        </mat-form-field>
+        <span class="text-danger" *ngIf="frmLogin.touched && !!frmLogin.controls.Username?.errors?.required">
+            Username or Email is required
+        </span>
+        <mat-form-field class="full-width">
+            <mat-label>Password</mat-label>
+            <input type="password" [ngClass]="getErrorCSS('Password')" matInput
+                placeholder="Password" formControlName="Password" />
+        </mat-form-field>
+        <span class="text-danger" *ngIf="frmLogin.touched && !!frmLogin.controls.Password?.errors?.required">
+            Password is required
+        </span>
+        <span class="text-danger" *ngIf="error.length > 0" style='width: 100%;float: left;'>
+            {{error}}
+        </span>
+        <button mat-raised-button type="submit" name="btnLogin" color="primary" class="btn">Login</button>
+        <button mat-raised-button type="button" name="btnCancel" color="primary" class="btn"  (click)="revertfrm()">Cancel</button>        
+    </form>
+</mat-card>

@@ -1,0 +1,90 @@
+mat-grid-list {
+	padding: 0px;
+	margin: 0px;
+}
+.MainContent {
+	mat-card {
+		padding: 0px;
+	}
+	height: 100%;
+	.LeftPanel {
+        width: 100%;
+		height: 100%;
+		border-right: 1px solid gray;
+		display: block;
+
+		.LblTitlle {
+			width: 100%;
+			font-weight: bold;
+			display: block;
+		}
+		.LblBody {
+			width: 100%;
+			display: block;
+		}
+		.Rec {
+			padding: 7px;
+			color: #515050;
+			line-height: 25px;
+		}
+	}
+	.RightPanel {
+		width: 100%;  
+	}
+}
+
+.RemoveRec {
+    float: right;
+    font-size: 14px;
+    color: darkgray;
+    img {
+        height: 16px;
+    }
+}
+
+.FullWidth {
+	width: 100%;
+	display: block;
+	float: left;
+}
+
+.FrmForm {
+    padding: 20px;
+	float: left;
+	display: block;
+    width: 100%;
+    mat-label{
+        margin: 8px 0px;
+        float: left;
+    }
+	.btn {
+		width: 20%; 
+		margin-top: 10px;
+		float: right;
+	}
+	.btnAddNew {
+		width: 30%;
+	}
+	.inputField {
+        font-family: verdana;
+		display: block;
+		width: 100%;
+		padding: 6px 1px 6px 6px;
+		font-size: 16px;
+		line-height: 1.428571429;
+		color: #555;
+		background-color: #fff;
+		background-image: none;
+		border: 1px solid darkgray;
+		border-radius: 4px;
+		-webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
+		box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
+		-webkit-transition: border-color ease-in-out 0.15s,
+			box-shadow ease-in-out 0.15s;
+        transition: border-color ease-in-out 0.15s, box-shadow ease-in-out 0.15s;
+        margin-right: 30px;
+	}
+	.txtarea {
+		height: 250px;
+	}
+} 

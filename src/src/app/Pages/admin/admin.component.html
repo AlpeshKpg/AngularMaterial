@@ -1,0 +1,51 @@
+<mat-card>
+    <mat-label>G Notes</mat-label>
+</mat-card>
+<mat-divider></mat-divider>
+
+<mat-grid-list cols="12" rowHeight="100%" class="MainContent">
+    <mat-grid-tile [colspan]="4">
+        <div class="LeftPanel">
+            <div *ngFor="let item of NoteList;let i= index;">
+                <div class="Rec">
+                    <span class="LblTitlle">
+                        <a (click)="FillDetail(i)">
+                            {{item.Title}}
+                        </a>
+                        <a (click)="DeleteNote(i)" class="RemoveRec">
+                            <img id='AddImgIcon' src="assets/close.svg" />
+                        </a>
+                    </span>
+                    <span class="LblBody">
+                        {{item.Body}}
+                    </span>
+                </div>
+                <mat-divider></mat-divider>
+            </div>
+        </div>
+    </mat-grid-tile>
+    <mat-grid-tile [colspan]="8">
+        <div class="RightPanel FrmForm">
+            <form [formGroup]="frmNote" (ngSubmit)="saveNote()">
+                <div class="FullWidth">
+                    <button mat-raised-button type="button" name="btnAddNew" class="btn btnAddNew" (click)="SetFormForAddNote()">+ Add Note</button>
+                </div>
+                <mat-label>Title</mat-label>
+                <input type="text" [ngClass]="getErrorCSS('Title')" matInput placeholder="Title" formControlName="Title"
+                    class="inputField" />
+
+                <span class="text-danger" *ngIf="frmNote.touched && !!frmNote.controls.Title?.errors?.required">
+                    Title is required
+                </span>
+
+                <mat-label>Body</mat-label>
+                <textarea type="text" matInput placeholder="Body" formControlName="Body" class="inputField txtarea"></textarea>
+
+                <span class="text-danger" *ngIf="error.length > 0" style='width: 100%;float: left;'>
+                    {{error}}
+                </span>
+                <button mat-raised-button type="submit" name="btnSubmit" color="primary" class="btn">Save</button>
+            </form>
+        </div>
+    </mat-grid-tile>
+</mat-grid-list>
