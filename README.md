@@ -3,7 +3,7 @@ Practical Test for Sooryen TEch.
 
 ## Installation
 
-Creates a new workspace and an initial Angular app using following angular cli command.
+Create a new workspace and an initial Angular app using following angular cli command.
 
 ```bash
 ng new myApp
