@@ -13,6 +13,12 @@ download and replace src folder of app with subfolder of src folder downloaded f
 
 https://github.com/AlpeshKpg/AngularMaterial/tree/master/src/src
 
+now run your project with following command.
+
+```bash
+ng serve
+```
+
 ## Contributing
 Pull requests are welcome. For major changes, please open an issue first to discuss what you would like to change.
 
